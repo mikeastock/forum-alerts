@@ -18,7 +18,7 @@ test:
   override:
     - mix test
 
-deploy:
+deployment:
   production:
     branch: master
     heroku:
