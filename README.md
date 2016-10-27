@@ -4,23 +4,14 @@
 
 Simple mix task that parses FredMiranda forums for items on sale
 
-## Installation
+## Usage
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed as:
+There is a single mix task that is currently ran on a hourly basis via [Heroku's
+scheduler](https://devcenter.heroku.com/articles/scheduler). To use this mix task
+pass in regex as search queries.
 
-  1. Add `forum_alerts` to your list of dependencies in `mix.exs`:
+The application also expects `SLACK_TOKEN` to be set.
 
-    ```elixir
-    def deps do
-      [{:forum_alerts, "~> 0.1.0"}]
-    end
-    ```
-
-  2. Ensure `forum_alerts` is started before your application:
-
-    ```elixir
-    def application do
-      [applications: [:forum_alerts]]
-    end
-    ```
-
+```bash
+mix forum_alerts "85.*1.4" "14-24"
+```
