@@ -1,6 +1,8 @@
 # ForumAlerts
 
-**TODO: Add description**
+[![CircleCI](https://circleci.com/gh/mikeastock/forum-alerts.svg?style=svg&circle-token=9074eb710b278f686849eb1c2c9c5d9ba1d0cce5)](https://circleci.com/gh/mikeastock/forum-alerts)
+
+Simple mix task that parses FredMiranda forums for items on sale
 
 ## Installation
 
