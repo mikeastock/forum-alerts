@@ -8,7 +8,7 @@ defmodule Mix.Tasks.ForumAlerts do
   def run(search_items) do
     Application.ensure_all_started(:forum_alerts)
 
-    html = File.read!("test/support/fixtures/page.html")
+    %HTTPoison.Response{body: html} = HTTPoison.get!("www.fredmiranda.com/forum/board/10")
 
     search_items
     |> Enum.map(&(Parser.find_results(html, &1)))
