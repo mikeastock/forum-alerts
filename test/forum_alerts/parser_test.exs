@@ -13,6 +13,7 @@ defmodule ForumAlertsTest do
     [
       "FS: Nikon 85mm 1.4G, Edelkrone SliderPlus Pro Medium, Edelkron...",
       "FT: Nikon 85mm f1.4G for Zeiss 85mm Milvus ZF.2 maybe 135 ZF.2",
+      "FS: Sigma 85mm 1.4 for Nikon",
       "FS: Price drop Nikon 85  1.4G ($1030) , Sigma 150 2.8 macro",
     ]
   end
