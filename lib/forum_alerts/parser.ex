@@ -1,11 +1,21 @@
 defmodule ForumAlerts.Parser do
-  def parse(html) do
-    link_elements = Floki.find(html, "tr a.topictitle")
+  def find_results(html, query) do
+    html
+    |> Floki.find("tr a.topictitle")
+    |> Enum.filter(&(match_element(&1, query)))
+    |> Enum.map(&generate_message/1)
+  end
 
-    matching_elements = Enum.filter(link_elements, fn element ->
-      element |> Floki.text |> String.match?(~r/85.*1.4/)
-    end)
+  defp match_element(element, query) do
+    element
+    |> Floki.text
+    |> String.match?(~r/#{query}/)
+  end
 
-    matching_elements |> Enum.map(&Floki.text/1)
+  defp generate_message(element) do
+    text = Floki.text(element)
+    href = Floki.attribute(element, "href") |> List.first
+
+    text <> " - " <> "http://www.fredmiranda.com" <> href
   end
 end

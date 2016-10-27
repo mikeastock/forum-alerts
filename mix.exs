@@ -14,7 +14,7 @@ defmodule ForumAlerts.Mixfile do
   #
   # Type "mix help compile.app" for more information
   def application do
-    [applications: [:httpoison, :logger]]
+    [applications: [:httpoison, :logger, :slack]]
   end
 
   # Dependencies can be Hex packages:
@@ -29,7 +29,8 @@ defmodule ForumAlerts.Mixfile do
   defp deps do
     [
       {:floki, "~> 0.10"},
-      {:httpoison, "~> 0.8.0"},
+      {:httpoison, "~> 0.9.0"},
+      {:slack, "~> 0.8.0"},
     ]
   end
 end
