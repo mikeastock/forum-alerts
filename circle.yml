@@ -17,3 +17,9 @@ dependencies:
 test:
   override:
     - mix test
+
+deploy:
+  production:
+    branch: master
+    heroku:
+      appname: forum-alerts
