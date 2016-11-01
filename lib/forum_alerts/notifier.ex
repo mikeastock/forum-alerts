@@ -1,5 +1,5 @@
 defmodule ForumAlerts.Notifier do
-  @channel "#fred-miranda-alerts"
+  @channel System.get_env("SLACK_CHANNEL")
 
   def notify(message) do
     Slack.Web.Chat.post_message(@channel, "```#{message}```")

@@ -10,7 +10,8 @@ There is a single mix task that is currently ran on a hourly basis via [Heroku's
 scheduler](https://devcenter.heroku.com/articles/scheduler). To use this mix task
 pass in regex as search queries.
 
-The application also expects `SLACK_TOKEN` to be set.
+The application notifies new matches to a Slack channel that is set with
+`SLACK_CHANNEL`. For Slack authentication `SLACK_TOKEN` needs to be set.
 
 ```bash
 mix forum_alerts "85.*1.4" "14-24"
