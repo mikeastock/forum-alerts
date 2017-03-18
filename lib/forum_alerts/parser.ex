@@ -9,7 +9,7 @@ defmodule ForumAlerts.Parser do
   defp match_element(element, query) do
     element
     |> Floki.text
-    |> String.match?(~r/#{query}/)
+    |> String.match?(~r/#{query}/i)
   end
 
   defp generate_message(element) do
