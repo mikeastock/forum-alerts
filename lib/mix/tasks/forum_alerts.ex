@@ -14,5 +14,11 @@ defmodule Mix.Tasks.ForumAlerts do
     |> Enum.map(&(Parser.find_results(html, &1)))
     |> List.flatten
     |> Enum.each(&Notifier.notify/1)
+
+    Notifier.notify(separator())
+  end
+
+  defp separator do
+    "#{String.duplicate("-", 20)}END#{String.duplicate("-", 20)}"
   end
 end

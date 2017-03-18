@@ -4,7 +4,7 @@ defmodule ForumAlerts.Mixfile do
   def project do
     [app: :forum_alerts,
      version: "0.1.0",
-     elixir: "~> 1.3",
+     elixir: "~> 1.4",
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
      deps: deps()]
@@ -29,8 +29,8 @@ defmodule ForumAlerts.Mixfile do
   defp deps do
     [
       {:floki, "~> 0.10"},
-      {:httpoison, "~> 0.9.0"},
-      {:slack, "~> 0.8.0"},
+      {:httpoison, "~> 0.11"},
+      {:slack, "~> 0.11"},
     ]
   end
 end
